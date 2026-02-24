@@ -1,0 +1,159 @@
+/* === Header / Top Bar (Phase 2) === */
+
+/* Main toolbar: white, subtle bottom shadow */
+md-toolbar,
+md-toolbar.md-default-theme,
+.md-default-theme md-toolbar,
+md-toolbar[md-theme="default"],
+md-toolbar.sg-toolbar-main,
+.sg-top-navbar {
+  background-color: var(--gmail-bg-primary) !important;
+  color: var(--gmail-text-primary) !important;
+  box-shadow: var(--gmail-shadow-header) !important;
+  min-height: var(--gmail-header-height) !important;
+  max-height: var(--gmail-header-height) !important;
+}
+
+.md-toolbar-tools {
+  height: var(--gmail-header-height) !important;
+  max-height: var(--gmail-header-height) !important;
+  padding: 0 var(--gmail-space-base) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+/* App logo / branding area */
+md-toolbar .sg-logo,
+md-toolbar .app-logo,
+md-toolbar h1,
+md-toolbar .md-toolbar-tools h2 {
+  font-family: var(--gmail-font-display) !important;
+  font-size: var(--gmail-font-xl) !important;
+  font-weight: var(--gmail-weight-regular) !important;
+  color: var(--gmail-text-secondary) !important;
+  letter-spacing: var(--gmail-ls-tight) !important;
+  margin: 0 !important;
+}
+
+/* Hamburger / menu toggle */
+md-toolbar .md-button[menu-toggle],
+md-toolbar .md-button[ng-click*="toggle"],
+md-toolbar .md-button[aria-label*="menu"],
+md-toolbar .md-button[aria-label*="Menu"] {
+  border-radius: var(--gmail-radius-full) !important;
+  color: var(--gmail-icon-default) !important;
+}
+
+/* ── Search Bar ── */
+md-toolbar md-autocomplete,
+md-toolbar .sg-search-field,
+md-toolbar form[name*="search"],
+md-toolbar input[type="search"],
+md-toolbar input[type="text"].sg-search,
+.sg-search-input-container {
+  background-color: var(--gmail-bg-tertiary) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 var(--gmail-space-base) !important;
+  height: 48px !important;
+  max-width: 720px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  transition: background-color var(--gmail-transition-normal),
+              box-shadow var(--gmail-transition-normal) !important;
+}
+
+md-toolbar md-autocomplete:focus-within,
+md-toolbar .sg-search-field:focus-within,
+md-toolbar input[type="search"]:focus,
+.sg-search-input-container:focus-within {
+  background-color: var(--gmail-bg-primary) !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+}
+
+/* Search input text */
+md-toolbar md-autocomplete input,
+md-toolbar input[type="search"],
+md-toolbar .sg-search-field input {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-size: var(--gmail-font-base) !important;
+  color: var(--gmail-text-primary) !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+md-toolbar md-autocomplete input::placeholder,
+md-toolbar input[type="search"]::placeholder {
+  color: var(--gmail-text-secondary) !important;
+}
+
+/* Search icon */
+md-toolbar .sg-search-field md-icon,
+md-toolbar md-autocomplete md-icon,
+md-toolbar .search-icon {
+  color: var(--gmail-icon-default) !important;
+}
+
+/* Autocomplete dropdown */
+md-autocomplete-wrap md-virtual-repeat-container,
+.md-autocomplete-suggestions-container {
+  background-color: var(--gmail-bg-primary) !important;
+  border-radius: var(--gmail-radius-md) !important;
+  box-shadow: var(--gmail-shadow-md) !important;
+  margin-top: var(--gmail-space-xs) !important;
+}
+
+.md-autocomplete-suggestions li {
+  font-size: var(--gmail-font-base) !important;
+  color: var(--gmail-text-primary) !important;
+  padding: var(--gmail-space-sm) var(--gmail-space-base) !important;
+}
+
+.md-autocomplete-suggestions li:hover,
+.md-autocomplete-suggestions li.selected {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* Header icons (settings, help, grid, avatar) */
+md-toolbar md-icon,
+md-toolbar .md-button md-icon {
+  color: var(--gmail-icon-default) !important;
+}
+
+md-toolbar .md-button:hover md-icon {
+  color: var(--gmail-text-primary) !important;
+}
+
+/* User avatar circle in header */
+md-toolbar sg-avatar,
+md-toolbar .sg-avatar,
+md-toolbar .user-avatar,
+md-toolbar [sg-avatar] {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: var(--gmail-radius-full) !important;
+  cursor: pointer !important;
+}
+
+md-toolbar sg-avatar img,
+md-toolbar .sg-avatar img {
+  border-radius: var(--gmail-radius-full) !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Notification badges on header icons */
+md-toolbar .md-badge,
+md-toolbar .sg-badge {
+  background-color: #d93025 !important;
+  color: var(--gmail-text-on-primary) !important;
+  font-size: var(--gmail-font-xs) !important;
+  border-radius: var(--gmail-radius-full) !important;
+  min-width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
+  padding: 0 var(--gmail-space-xxs) !important;
+}

@@ -1,0 +1,124 @@
+/* === Gmail Design Tokens — CSS Custom Properties === */
+
+:root {
+  /* Font families */
+  --gmail-font-primary: 'Roboto', 'RobotoDraft', 'Helvetica', 'Arial', sans-serif;
+  --gmail-font-display: 'Google Sans', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+  /* Font sizes */
+  --gmail-font-xs:   11px;
+  --gmail-font-sm:   12px;
+  --gmail-font-base: 14px;
+  --gmail-font-md:   16px;
+  --gmail-font-lg:   18px;
+  --gmail-font-xl:   22px;
+
+  /* Font weights */
+  --gmail-weight-regular: 400;
+  --gmail-weight-medium:  500;
+  --gmail-weight-bold:    700;
+
+  /* Line heights */
+  --gmail-lh-tight:   1.2;
+  --gmail-lh-normal:  1.5;
+  --gmail-lh-relaxed: 1.75;
+
+  /* Letter spacing */
+  --gmail-ls-tight:  -0.01em;
+  --gmail-ls-normal: 0;
+  --gmail-ls-wide:   0.025em;
+
+  /* Spacing scale */
+  --gmail-space-xxs:  2px;
+  --gmail-space-xs:   4px;
+  --gmail-space-sm:   8px;
+  --gmail-space-md:   12px;
+  --gmail-space-base: 16px;
+  --gmail-space-lg:   20px;
+  --gmail-space-xl:   24px;
+  --gmail-space-xxl:  32px;
+
+  /* Layout dimensions */
+  --gmail-header-height:                   64px;
+  --gmail-sidebar-width:                   256px;
+  --gmail-sidebar-collapsed:               72px;
+  --gmail-compose-width:                   566px;
+  --gmail-compose-height:                  500px;
+  --gmail-message-row-height:              40px;
+  --gmail-message-row-height-comfortable:  52px;
+  --gmail-message-row-height-default:      44px;
+
+  /* Border radius */
+  --gmail-radius-none: 0;
+  --gmail-radius-sm:   4px;
+  --gmail-radius-md:   8px;
+  --gmail-radius-lg:   16px;
+  --gmail-radius-pill: 24px;
+  --gmail-radius-full: 50%;
+
+  /* Shadows */
+  --gmail-shadow-none:   none;
+  --gmail-shadow-sm:     0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --gmail-shadow-md:     0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+  --gmail-shadow-lg:     0 4px 8px 0 rgba(60,64,67,0.3), 0 8px 16px 4px rgba(60,64,67,0.15);
+  --gmail-shadow-header: 0 3px 6px rgba(0,0,0,0.05);
+
+  /* Surface colors */
+  --gmail-bg-primary:     #ffffff;
+  --gmail-bg-secondary:   #f6f8fc;
+  --gmail-bg-tertiary:    #f1f3f4;
+  --gmail-bg-hover:       rgba(32,33,36,0.059);
+  --gmail-bg-active:      #e8f0fe;
+  --gmail-bg-compose-btn: #c2e7ff;
+
+  /* Text colors */
+  --gmail-text-primary:    #202124;
+  --gmail-text-secondary:  #5f6368;
+  --gmail-text-tertiary:   #80868b;
+  --gmail-text-link:       #1a73e8;
+  --gmail-text-on-primary: #ffffff;
+  --gmail-text-error:      #d93025;
+
+  /* Border colors */
+  --gmail-border-default: #e8eaed;
+  --gmail-border-focus:   #1a73e8;
+
+  /* Icon colors */
+  --gmail-icon-default:   #5f6368;
+  --gmail-icon-active:    #1a73e8;
+  --gmail-icon-star:      #f4b400;
+  --gmail-icon-important: #f4b400;
+
+  /* Message state */
+  --gmail-unread-bg:  #ffffff;
+  --gmail-read-bg:    #f2f6fc;
+
+  /* Transitions */
+  --gmail-transition-fast:   0.15s ease;
+  --gmail-transition-normal: 0.2s ease;
+}
+
+/* Global font reset */
+body,
+.sg-app,
+[ng-app] {
+  font-family: var(--gmail-font-primary) !important;
+  color: var(--gmail-text-primary) !important;
+  background-color: var(--gmail-bg-secondary) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+/* Remove default Angular Material green tints from backgrounds */
+md-content,
+.md-default-theme md-content {
+  background-color: var(--gmail-bg-primary) !important;
+  color: var(--gmail-text-primary) !important;
+}

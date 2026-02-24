@@ -1,0 +1,193 @@
+/* === Calendar Module (Phase 8) === */
+
+/* ── Calendar Container ── */
+.sg-calendar,
+[module="scheduler"],
+.scheduler-view,
+#scheduler {
+  background-color: var(--gmail-bg-primary) !important;
+  font-family: var(--gmail-font-primary) !important;
+}
+
+/* ── Calendar Toolbar ── */
+.sg-calendar md-toolbar,
+[module="scheduler"] md-toolbar {
+  background-color: var(--gmail-bg-primary) !important;
+  color: var(--gmail-text-primary) !important;
+  box-shadow: var(--gmail-shadow-header) !important;
+}
+
+.sg-calendar md-toolbar md-icon,
+[module="scheduler"] md-toolbar md-icon {
+  color: var(--gmail-icon-default) !important;
+}
+
+/* ── Mini Calendar (month picker) ── */
+.sg-calendar .sg-month-picker,
+.sg-calendar .mini-calendar,
+.calendar-mini {
+  background-color: var(--gmail-bg-primary) !important;
+}
+
+.sg-calendar .mini-calendar .day-header {
+  font-size: var(--gmail-font-xs) !important;
+  color: var(--gmail-text-secondary) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+}
+
+.sg-calendar .mini-calendar .day-number,
+.calendar-mini .day {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-primary) !important;
+  border-radius: var(--gmail-radius-full) !important;
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 28px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: background-color var(--gmail-transition-fast) !important;
+}
+
+.sg-calendar .mini-calendar .day-number:hover,
+.calendar-mini .day:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+.sg-calendar .mini-calendar .day-number.today,
+.calendar-mini .day.today {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+  font-weight: var(--gmail-weight-bold) !important;
+}
+
+.sg-calendar .mini-calendar .day-number.selected,
+.calendar-mini .day.selected {
+  background-color: var(--gmail-bg-active) !important;
+  color: var(--gmail-text-link) !important;
+}
+
+/* ── Calendar Grid / Main View ── */
+.sg-calendar .calendar-grid,
+.sg-calendar .week-view,
+.sg-calendar .month-view,
+.sg-calendar .day-view {
+  background-color: var(--gmail-bg-primary) !important;
+  border: 1px solid var(--gmail-border-default) !important;
+  border-radius: var(--gmail-radius-md) !important;
+}
+
+/* Day/hour grid lines */
+.sg-calendar .time-slot,
+.sg-calendar .day-column {
+  border-right: 1px solid var(--gmail-border-default) !important;
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+}
+
+/* Time labels */
+.sg-calendar .time-label {
+  font-size: var(--gmail-font-xs) !important;
+  color: var(--gmail-text-tertiary) !important;
+}
+
+/* Column headers (day names + dates) */
+.sg-calendar .column-header,
+.sg-calendar .day-header-cell {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+  font-weight: var(--gmail-weight-regular) !important;
+  padding: var(--gmail-space-xs) !important;
+  text-align: center !important;
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+}
+
+.sg-calendar .column-header.today,
+.sg-calendar .day-header-cell.today {
+  color: #1a73e8 !important;
+}
+
+.sg-calendar .column-header .date-number.today {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+  border-radius: var(--gmail-radius-full) !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  display: inline-block !important;
+}
+
+/* ── Calendar Events ── */
+.sg-calendar .calendar-event,
+.sg-calendar .event-block,
+[sg-calendar-event] {
+  border-radius: var(--gmail-radius-sm) !important;
+  font-size: var(--gmail-font-xs) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  padding: 2px var(--gmail-space-xs) !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  transition: box-shadow var(--gmail-transition-fast) !important;
+}
+
+.sg-calendar .calendar-event:hover {
+  box-shadow: var(--gmail-shadow-sm) !important;
+  z-index: 2 !important;
+}
+
+/* Default event color (blue) */
+.sg-calendar .calendar-event.default-color {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+}
+
+/* ── Calendar Sidebar (calendar list) ── */
+.sg-calendar md-sidenav,
+.sg-calendar .calendar-list {
+  background-color: var(--gmail-bg-primary) !important;
+}
+
+.sg-calendar .calendar-list-item {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-primary) !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--gmail-space-sm) !important;
+  cursor: pointer !important;
+  padding: 0 var(--gmail-space-base) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+}
+
+.sg-calendar .calendar-list-item:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* Calendar color dot */
+.sg-calendar .calendar-color-dot {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: var(--gmail-radius-full) !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Event detail popup ── */
+.sg-calendar md-card.event-detail,
+.sg-calendar .event-popup {
+  border-radius: var(--gmail-radius-md) !important;
+  box-shadow: var(--gmail-shadow-md) !important;
+  background-color: var(--gmail-bg-primary) !important;
+  padding: var(--gmail-space-base) !important;
+}
+
+.sg-calendar .event-popup h3,
+.sg-calendar .event-detail .event-title {
+  font-size: var(--gmail-font-base) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+/* ── New event FAB ── */
+.sg-calendar .md-fab,
+[module="scheduler"] .md-fab {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+}

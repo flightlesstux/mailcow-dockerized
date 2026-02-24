@@ -1,0 +1,280 @@
+/* === Message Detail / Reading Pane (Phase 5) === */
+
+/* ── Detail View Container ── */
+.sg-mail-detail,
+[sg-mail-detail],
+.mailer_message-view,
+.sg-message-view {
+  background-color: var(--gmail-bg-primary) !important;
+  overflow-y: auto !important;
+}
+
+/* ── Subject / Title Header ── */
+.sg-message-header,
+.sg-mail-detail .msg-header,
+.mailer_message-view .message-header,
+.sg-message-subject-bar {
+  padding: var(--gmail-space-xl) var(--gmail-space-xl) var(--gmail-space-base) !important;
+  border-bottom: none !important;
+}
+
+.sg-message-header h2,
+.sg-message-header h3,
+.sg-message-header .subject,
+.sg-mail-detail .subject,
+.sg-subject-line {
+  font-family: var(--gmail-font-display) !important;
+  font-size: var(--gmail-font-xl) !important;
+  font-weight: var(--gmail-weight-regular) !important;
+  color: var(--gmail-text-primary) !important;
+  line-height: var(--gmail-lh-tight) !important;
+  margin: 0 0 var(--gmail-space-base) 0 !important;
+  word-break: break-word !important;
+}
+
+/* Labels/tags on subject line */
+.sg-message-header .sg-tag,
+.sg-message-header .sg-label {
+  display: inline-block !important;
+  background-color: var(--gmail-bg-tertiary) !important;
+  color: var(--gmail-text-secondary) !important;
+  font-size: var(--gmail-font-xs) !important;
+  padding: 2px var(--gmail-space-sm) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  margin-left: var(--gmail-space-xs) !important;
+  vertical-align: middle !important;
+}
+
+/* ── Message / Thread Item ── */
+.sg-thread-message,
+.sg-message-item,
+.mailer_message-view .message-body-container {
+  border-top: 1px solid var(--gmail-border-default) !important;
+  margin: 0 var(--gmail-space-xl) !important;
+  padding: var(--gmail-space-base) 0 !important;
+}
+
+.sg-thread-message:first-child,
+.sg-message-item:first-child {
+  border-top: none !important;
+}
+
+/* ── Sender Info Row ── */
+.sg-message-sender,
+.sg-mail-detail .sender-row,
+.message-sender-info {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: var(--gmail-space-md) !important;
+  padding: var(--gmail-space-base) 0 var(--gmail-space-sm) !important;
+}
+
+/* Sender avatar */
+.sg-message-sender sg-avatar,
+.sg-message-sender .sg-avatar,
+.sg-message-sender .md-avatar,
+.message-sender-info .sg-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  border-radius: var(--gmail-radius-full) !important;
+  flex-shrink: 0 !important;
+  background-color: #1a73e8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--gmail-text-on-primary) !important;
+  font-size: var(--gmail-font-base) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  overflow: hidden !important;
+}
+
+.sg-message-sender sg-avatar img,
+.sg-message-sender .sg-avatar img {
+  border-radius: var(--gmail-radius-full) !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Sender name and email */
+.sg-message-sender .sg-sender-name,
+.sender-row .from-name {
+  font-size: var(--gmail-font-sm) !important;
+  font-weight: var(--gmail-weight-bold) !important;
+  color: var(--gmail-text-primary) !important;
+  line-height: 1.4 !important;
+}
+
+.sg-message-sender .sg-sender-email,
+.sender-row .from-email {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+}
+
+/* Date in sender row */
+.sg-message-sender .sg-message-date,
+.sender-row .message-time {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+  margin-left: auto !important;
+  white-space: nowrap !important;
+}
+
+/* Action buttons (Reply, Forward, More) next to date */
+.sg-message-sender .sg-message-actions,
+.sender-row .message-actions {
+  display: flex !important;
+  gap: var(--gmail-space-xs) !important;
+  flex-shrink: 0 !important;
+}
+
+.sg-message-sender .sg-message-actions .md-button,
+.sender-row .message-actions .md-button {
+  border-radius: var(--gmail-radius-full) !important;
+  color: var(--gmail-icon-default) !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  min-width: 36px !important;
+  line-height: 36px !important;
+}
+
+/* ── Message Body ── */
+.sg-message-body,
+.sg-mail-detail .msg-body,
+.mailer_message-view .message-content,
+.sg-message-content {
+  padding: var(--gmail-space-sm) 0 var(--gmail-space-xl) !important;
+  font-size: var(--gmail-font-base) !important;
+  line-height: var(--gmail-lh-relaxed) !important;
+  color: var(--gmail-text-primary) !important;
+  word-break: break-word !important;
+}
+
+/* Plain text messages */
+.sg-message-body pre,
+.sg-message-content pre {
+  font-family: 'Roboto Mono', 'Courier New', monospace !important;
+  font-size: var(--gmail-font-sm) !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+/* Message links */
+.sg-message-body a,
+.sg-message-content a {
+  color: var(--gmail-text-link) !important;
+}
+
+/* ── Attachment Area ── */
+.sg-attachment-list,
+.sg-mail-detail .attachments {
+  border-top: 1px solid var(--gmail-border-default) !important;
+  padding: var(--gmail-space-base) 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: var(--gmail-space-sm) !important;
+}
+
+.sg-attachment-item,
+.sg-mail-detail .attachment-chip {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--gmail-space-sm) !important;
+  background-color: var(--gmail-bg-tertiary) !important;
+  border: 1px solid var(--gmail-border-default) !important;
+  border-radius: var(--gmail-radius-md) !important;
+  padding: var(--gmail-space-sm) var(--gmail-space-base) !important;
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-primary) !important;
+  cursor: pointer !important;
+  transition: background-color var(--gmail-transition-fast) !important;
+}
+
+.sg-attachment-item:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+.sg-attachment-item md-icon {
+  color: var(--gmail-icon-default) !important;
+  font-size: 20px !important;
+}
+
+/* ── Reply Box ── */
+.sg-reply-box,
+.sg-message-reply,
+.sg-mail-detail .reply-placeholder {
+  border: 1px solid var(--gmail-border-default) !important;
+  border-radius: var(--gmail-radius-md) !important;
+  margin: var(--gmail-space-base) 0 var(--gmail-space-xxl) !important;
+  padding: var(--gmail-space-md) var(--gmail-space-base) !important;
+  cursor: text !important;
+  color: var(--gmail-text-tertiary) !important;
+  font-size: var(--gmail-font-sm) !important;
+  transition: box-shadow var(--gmail-transition-fast),
+              border-color var(--gmail-transition-fast) !important;
+  background-color: var(--gmail-bg-primary) !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+}
+
+.sg-reply-box:hover,
+.sg-message-reply:hover {
+  box-shadow: var(--gmail-shadow-md) !important;
+}
+
+.sg-reply-box:focus-within,
+.sg-message-reply:focus-within {
+  border-color: var(--gmail-border-focus) !important;
+  box-shadow: 0 0 0 1px var(--gmail-border-focus) !important;
+}
+
+/* Reply/Forward quick action buttons */
+.sg-message-quick-reply,
+.sg-quick-actions {
+  display: flex !important;
+  gap: var(--gmail-space-sm) !important;
+  padding: var(--gmail-space-base) 0 !important;
+}
+
+.sg-message-quick-reply .md-button,
+.sg-quick-actions .md-button {
+  border: 1px solid var(--gmail-border-default) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+  font-size: var(--gmail-font-sm) !important;
+  height: 36px !important;
+  padding: 0 var(--gmail-space-base) !important;
+}
+
+.sg-message-quick-reply .md-button:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* ── Collapsed thread messages ── */
+.sg-thread-collapsed,
+.sg-thread-message.collapsed {
+  cursor: pointer !important;
+}
+
+.sg-thread-collapsed:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* ── Message detail toolbar (Archive, Delete, etc.) ── */
+.sg-message-toolbar,
+.sg-mail-detail md-toolbar {
+  background-color: var(--gmail-bg-primary) !important;
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+  color: var(--gmail-text-primary) !important;
+  box-shadow: none !important;
+}
+
+.sg-message-toolbar .md-button,
+.sg-mail-detail md-toolbar .md-button {
+  border-radius: var(--gmail-radius-full) !important;
+  color: var(--gmail-icon-default) !important;
+}
+
+.sg-message-toolbar .md-button:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}

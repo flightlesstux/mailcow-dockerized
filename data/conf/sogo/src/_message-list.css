@@ -1,0 +1,267 @@
+/* === Message List / Inbox (Phase 4) === */
+
+/* ── List Container ── */
+.sg-mail-list,
+[sg-mail-list],
+.mailer_mailbox-list,
+md-virtual-repeat-container.sg-mail-list {
+  background-color: var(--gmail-bg-primary) !important;
+  border-right: 1px solid var(--gmail-border-default) !important;
+}
+
+/* ── Toolbar above message list (select-all, refresh, pagination) ── */
+.sg-toolbar-secondary,
+.sg-list-toolbar,
+.mailer_mailbox-toolbar {
+  background-color: var(--gmail-bg-primary) !important;
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 0 var(--gmail-space-base) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--gmail-space-xs) !important;
+}
+
+.sg-toolbar-secondary md-icon,
+.sg-list-toolbar md-icon {
+  color: var(--gmail-icon-default) !important;
+}
+
+.sg-toolbar-secondary .md-button,
+.sg-list-toolbar .md-button {
+  border-radius: var(--gmail-radius-full) !important;
+  color: var(--gmail-icon-default) !important;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  line-height: 40px !important;
+}
+
+.sg-toolbar-secondary .md-button:hover,
+.sg-list-toolbar .md-button:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* Pagination text */
+.sg-toolbar-secondary .sg-pagination,
+.sg-list-toolbar .pagination-info {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+  margin-left: auto !important;
+}
+
+/* ── Individual Message Row ── */
+.sg-mail-list md-list-item,
+.sg-mail-list .sg-mail-list-item,
+.mailer_mailbox-list md-list-item,
+md-virtual-repeat-container md-list-item,
+.sg-mail-row {
+  height: var(--gmail-message-row-height-default) !important;
+  min-height: var(--gmail-message-row-height-default) !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  padding: 0 var(--gmail-space-base) 0 var(--gmail-space-sm) !important;
+  font-size: var(--gmail-font-sm) !important;
+  cursor: pointer !important;
+  transition: box-shadow 0.08s ease !important;
+  position: relative !important;
+}
+
+.sg-mail-list md-list-item .md-list-item-inner,
+.sg-mail-list .sg-mail-list-item .md-list-item-inner {
+  padding: 0 !important;
+  height: var(--gmail-message-row-height-default) !important;
+  min-height: var(--gmail-message-row-height-default) !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Row hover: Gmail's floating shadow effect */
+.sg-mail-list md-list-item:hover,
+.mailer_mailbox-list md-list-item:hover {
+  box-shadow:
+    inset 1px 0 0 var(--gmail-border-default),
+    inset -1px 0 0 var(--gmail-border-default),
+    0 0 4px 0 rgba(60,64,67,0.15),
+    0 2px 3px 0 rgba(60,64,67,0.1) !important;
+  z-index: 1 !important;
+}
+
+/* ── Unread message ── */
+.sg-mail-list md-list-item.unread,
+.sg-mail-list md-list-item[data-is-read="false"],
+.sg-mail-list .sg-unread,
+.mailer_mailbox-list md-list-item.sg-unread {
+  background-color: var(--gmail-unread-bg) !important;
+}
+
+.sg-mail-list md-list-item.unread .sg-sender,
+.sg-mail-list md-list-item.unread .sg-subject,
+.sg-mail-list .sg-unread .sg-sender,
+.sg-mail-list .sg-unread .sg-subject {
+  font-weight: var(--gmail-weight-bold) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+/* ── Read message ── */
+.sg-mail-list md-list-item:not(.unread):not(.sg-selected),
+.sg-mail-list md-list-item[data-is-read="true"],
+.mailer_mailbox-list md-list-item:not(.sg-unread) {
+  background-color: var(--gmail-read-bg) !important;
+}
+
+.sg-mail-list md-list-item:not(.unread) .sg-sender,
+.sg-mail-list md-list-item:not(.unread) .sg-subject {
+  font-weight: var(--gmail-weight-regular) !important;
+  color: var(--gmail-text-secondary) !important;
+}
+
+/* ── Selected message row ── */
+.sg-mail-list md-list-item.sg-selected,
+.sg-mail-list md-list-item[selected],
+.sg-mail-list md-list-item.selected,
+.mailer_mailbox-list .sg-selected {
+  background-color: var(--gmail-bg-compose-btn) !important;
+}
+
+/* ── Checkbox ── */
+.sg-mail-list md-checkbox,
+.sg-mail-list .md-checkbox,
+.sg-mail-row md-checkbox {
+  margin: 0 var(--gmail-space-xs) 0 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.sg-mail-list md-checkbox .md-icon {
+  border-color: var(--gmail-icon-default) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+}
+
+.sg-mail-list md-checkbox.md-checked .md-icon {
+  background-color: var(--gmail-icon-active) !important;
+  border-color: var(--gmail-icon-active) !important;
+}
+
+/* ── Star icon ── */
+.sg-mail-list .sg-star,
+.sg-mail-list .sg-flag-message,
+.sg-mail-list [ng-click*="star"],
+.sg-mail-list md-icon.sg-star {
+  color: var(--gmail-border-default) !important;
+  font-size: 18px !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
+  margin: 0 var(--gmail-space-xs) !important;
+  transition: color var(--gmail-transition-fast) !important;
+}
+
+.sg-mail-list .sg-star.active,
+.sg-mail-list .sg-star.flagged,
+.sg-mail-list [ng-click*="star"].active,
+.sg-mail-list md-icon.sg-star[data-starred="true"] {
+  color: var(--gmail-icon-star) !important;
+}
+
+.sg-mail-list .sg-star:hover {
+  color: var(--gmail-icon-star) !important;
+}
+
+/* ── Sender name column ── */
+.sg-mail-list .sg-sender,
+.sg-mail-list .sg-from,
+.sg-mail-list .sender-name {
+  font-size: var(--gmail-font-sm) !important;
+  min-width: 160px !important;
+  max-width: 200px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Subject + snippet ── */
+.sg-mail-list .sg-subject,
+.sg-mail-list .subject-line {
+  flex: 1 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+.sg-mail-list .sg-subject-snippet,
+.sg-mail-list .sg-message-snippet,
+.sg-mail-list .snippet {
+  color: var(--gmail-text-tertiary) !important;
+  font-weight: var(--gmail-weight-regular) !important;
+}
+
+/* Snippet separator */
+.sg-mail-list .sg-subject-snippet::before,
+.sg-mail-list .snippet::before {
+  content: ' – ' !important;
+  color: var(--gmail-text-tertiary) !important;
+}
+
+/* ── Date column ── */
+.sg-mail-list .sg-date,
+.sg-mail-list .sg-message-date,
+.sg-mail-list .date-column {
+  font-size: var(--gmail-font-xs) !important;
+  color: var(--gmail-text-secondary) !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  margin-left: var(--gmail-space-sm) !important;
+}
+
+.sg-mail-list md-list-item.unread .sg-date,
+.sg-mail-list .sg-unread .sg-date {
+  font-weight: var(--gmail-weight-bold) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+/* ── Attachment indicator ── */
+.sg-mail-list .sg-attachment,
+.sg-mail-list md-icon.attachment,
+.sg-mail-list .has-attachment {
+  font-size: 16px !important;
+  color: var(--gmail-icon-default) !important;
+  margin-left: var(--gmail-space-xs) !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Important marker (yellow bookmark) ── */
+.sg-mail-list .sg-important,
+.sg-mail-list .important-marker {
+  color: var(--gmail-icon-important) !important;
+  font-size: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Empty inbox state ── */
+.sg-mail-list .sg-empty,
+.sg-mail-list .empty-state,
+.mailer_mailbox-list .empty-mailbox {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: var(--gmail-space-xxl) !important;
+  color: var(--gmail-text-secondary) !important;
+  font-size: var(--gmail-font-base) !important;
+}
+
+/* ── Loading spinner ── */
+md-progress-circular,
+.sg-mail-list md-progress-circular {
+  stroke: #1a73e8 !important;
+}
+
+/* ── Virtual scroll container ── */
+md-virtual-repeat-container {
+  background-color: var(--gmail-bg-primary) !important;
+}

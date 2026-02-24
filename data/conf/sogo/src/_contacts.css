@@ -1,0 +1,177 @@
+/* === Contacts / Address Book Module (Phase 8) === */
+
+/* ── Contacts Container ── */
+.sg-contacts,
+[module="addressbook"],
+.addressbook-view,
+#contacts {
+  background-color: var(--gmail-bg-primary) !important;
+  font-family: var(--gmail-font-primary) !important;
+}
+
+/* ── Contacts Toolbar ── */
+.sg-contacts md-toolbar,
+[module="addressbook"] md-toolbar {
+  background-color: var(--gmail-bg-primary) !important;
+  color: var(--gmail-text-primary) !important;
+  box-shadow: var(--gmail-shadow-header) !important;
+}
+
+/* ── Contact List ── */
+.sg-contacts .sg-contact-list,
+.addressbook-view .contact-list,
+[module="addressbook"] md-list {
+  background-color: var(--gmail-bg-primary) !important;
+  border-right: 1px solid var(--gmail-border-default) !important;
+}
+
+/* Individual contact row */
+.sg-contacts md-list-item,
+.sg-contact-list md-list-item,
+.contact-list md-list-item {
+  height: 56px !important;
+  min-height: 56px !important;
+  border-bottom: none !important;
+  padding: 0 var(--gmail-space-base) !important;
+  cursor: pointer !important;
+  transition: background-color var(--gmail-transition-fast) !important;
+}
+
+.sg-contacts md-list-item:hover,
+.sg-contact-list md-list-item:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+.sg-contacts md-list-item.selected,
+.sg-contact-list md-list-item.sg-active {
+  background-color: var(--gmail-bg-active) !important;
+}
+
+/* Contact avatar in list */
+.sg-contact-list sg-avatar,
+.sg-contact-list .sg-avatar,
+.contact-list .contact-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  border-radius: var(--gmail-radius-full) !important;
+  flex-shrink: 0 !important;
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: var(--gmail-font-base) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  overflow: hidden !important;
+  margin-right: var(--gmail-space-base) !important;
+}
+
+.sg-contact-list sg-avatar img,
+.sg-contact-list .sg-avatar img {
+  border-radius: var(--gmail-radius-full) !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Contact name in list */
+.sg-contact-list .sg-contact-name,
+.contact-list .contact-name {
+  font-size: var(--gmail-font-sm) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+/* Contact email/phone in list */
+.sg-contact-list .sg-contact-info,
+.contact-list .contact-email {
+  font-size: var(--gmail-font-xs) !important;
+  color: var(--gmail-text-secondary) !important;
+}
+
+/* ── Alphabet Index ── */
+.sg-contacts .alphabet-index,
+.sg-contact-list .index-bar {
+  font-size: var(--gmail-font-xs) !important;
+  color: var(--gmail-text-secondary) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  padding: var(--gmail-space-xs) var(--gmail-space-base) !important;
+  background-color: var(--gmail-bg-secondary) !important;
+}
+
+/* ── Contact Detail View ── */
+.sg-contacts .sg-contact-detail,
+.addressbook-view .contact-detail {
+  background-color: var(--gmail-bg-primary) !important;
+  padding: var(--gmail-space-xl) !important;
+}
+
+/* Contact detail header with large avatar */
+.sg-contact-detail .sg-contact-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--gmail-space-xl) !important;
+  margin-bottom: var(--gmail-space-xl) !important;
+}
+
+.sg-contact-detail .sg-large-avatar,
+.contact-detail .large-avatar {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: var(--gmail-radius-full) !important;
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: var(--gmail-font-xl) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  flex-shrink: 0 !important;
+}
+
+.sg-contact-detail h2,
+.contact-detail .contact-full-name {
+  font-family: var(--gmail-font-display) !important;
+  font-size: var(--gmail-font-xl) !important;
+  font-weight: var(--gmail-weight-regular) !important;
+  color: var(--gmail-text-primary) !important;
+  margin: 0 0 var(--gmail-space-xs) 0 !important;
+}
+
+.sg-contact-detail .contact-org,
+.contact-detail .organization {
+  font-size: var(--gmail-font-base) !important;
+  color: var(--gmail-text-secondary) !important;
+}
+
+/* Contact detail fields */
+.sg-contact-detail .sg-field-row,
+.contact-detail .field-row {
+  display: flex !important;
+  gap: var(--gmail-space-xl) !important;
+  padding: var(--gmail-space-sm) 0 !important;
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+  font-size: var(--gmail-font-sm) !important;
+}
+
+.sg-contact-detail .field-label {
+  color: var(--gmail-text-secondary) !important;
+  min-width: 80px !important;
+  flex-shrink: 0 !important;
+}
+
+.sg-contact-detail .field-value {
+  color: var(--gmail-text-primary) !important;
+}
+
+.sg-contact-detail .field-value a {
+  color: var(--gmail-text-link) !important;
+  text-decoration: none !important;
+}
+
+/* ── New contact FAB ── */
+.sg-contacts .md-fab,
+[module="addressbook"] .md-fab {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+}

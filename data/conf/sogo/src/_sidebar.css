@@ -1,0 +1,224 @@
+/* === Sidebar / Navigation (Phase 3) === */
+
+/* ── Sidenav Container ── */
+md-sidenav,
+md-sidenav.md-default-theme,
+.md-default-theme md-sidenav,
+.sg-sidenav,
+[component="sidenav"] {
+  background-color: var(--gmail-bg-primary) !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  width: var(--gmail-sidebar-width) !important;
+  min-width: var(--gmail-sidebar-width) !important;
+}
+
+/* ── Compose Button ── */
+md-sidenav .md-fab,
+md-sidenav .md-button.md-fab,
+md-sidenav [ng-click*="compose"],
+md-sidenav [ng-click*="newMessage"],
+md-sidenav [ng-click*="new-message"],
+.sg-compose-fab,
+.sg-fab-button {
+  background-color: var(--gmail-bg-compose-btn) !important;
+  color: var(--gmail-text-primary) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+  height: 56px !important;
+  min-width: 140px !important;
+  width: auto !important;
+  padding: 0 24px 0 16px !important;
+  margin: var(--gmail-space-base) var(--gmail-space-md) var(--gmail-space-base) var(--gmail-space-base) !important;
+  font-family: var(--gmail-font-display) !important;
+  font-size: var(--gmail-font-base) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+  line-height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--gmail-space-sm) !important;
+  transition: box-shadow var(--gmail-transition-normal),
+              background-color var(--gmail-transition-normal) !important;
+}
+
+md-sidenav .md-fab:hover,
+md-sidenav [ng-click*="compose"]:hover,
+.sg-compose-fab:hover {
+  box-shadow: var(--gmail-shadow-md) !important;
+  background-color: #b4d7f5 !important;
+}
+
+md-sidenav .md-fab md-icon,
+.sg-compose-fab md-icon {
+  color: var(--gmail-text-primary) !important;
+  font-size: 24px !important;
+}
+
+/* ── Folder / Mailbox List ── */
+md-sidenav md-list,
+.sg-folder-list,
+[sg-folder-list] {
+  padding: var(--gmail-space-xs) 0 !important;
+}
+
+/* Individual folder items */
+md-sidenav md-list-item,
+md-sidenav md-list-item.md-default-theme,
+.sg-folder-list md-list-item,
+.sg-folder-list li,
+[sg-folder-list] md-list-item {
+  height: 32px !important;
+  min-height: 32px !important;
+  border-radius: 0 var(--gmail-radius-pill) var(--gmail-radius-pill) 0 !important;
+  margin-right: var(--gmail-space-md) !important;
+  margin-left: 0 !important;
+  padding-left: var(--gmail-space-xl) !important;
+  font-size: var(--gmail-font-sm) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  letter-spacing: var(--gmail-ls-wide) !important;
+  color: var(--gmail-text-secondary) !important;
+  cursor: pointer !important;
+  transition: background-color var(--gmail-transition-fast) !important;
+  overflow: hidden !important;
+}
+
+md-sidenav md-list-item .md-list-item-inner,
+.sg-folder-list md-list-item .md-list-item-inner {
+  padding: 0 !important;
+  min-height: 32px !important;
+  height: 32px !important;
+}
+
+/* Hover state */
+md-sidenav md-list-item:hover,
+.sg-folder-list md-list-item:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* Active / selected folder */
+md-sidenav md-list-item.sg-active,
+md-sidenav md-list-item[selected],
+md-sidenav md-list-item.selected,
+md-sidenav md-list-item.active,
+.sg-folder-list .md-active,
+.sg-folder-list md-list-item.sg-active,
+.sg-folder-list li.selected {
+  background-color: var(--gmail-bg-active) !important;
+  color: var(--gmail-text-link) !important;
+  font-weight: var(--gmail-weight-bold) !important;
+}
+
+md-sidenav md-list-item.sg-active md-icon,
+md-sidenav md-list-item.selected md-icon,
+md-sidenav md-list-item.active md-icon,
+.sg-folder-list .md-active md-icon {
+  color: var(--gmail-icon-active) !important;
+}
+
+/* Folder icons */
+md-sidenav md-list-item md-icon,
+.sg-folder-list md-list-item md-icon {
+  color: var(--gmail-icon-default) !important;
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  margin-right: var(--gmail-space-base) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Unread count badges */
+md-sidenav .sg-folder-count,
+md-sidenav .unread-count,
+md-sidenav .sg-badge,
+.sg-folder-list .sg-count {
+  color: var(--gmail-text-primary) !important;
+  font-weight: var(--gmail-weight-bold) !important;
+  font-size: var(--gmail-font-xs) !important;
+  margin-left: auto !important;
+  margin-right: var(--gmail-space-md) !important;
+}
+
+/* Selected folder — count stays dark */
+md-sidenav md-list-item.sg-active .sg-folder-count,
+md-sidenav md-list-item.selected .unread-count {
+  color: var(--gmail-text-link) !important;
+}
+
+/* ── Section Separators ── */
+md-sidenav md-divider,
+.sg-folder-list md-divider {
+  border-top-color: var(--gmail-border-default) !important;
+  margin: var(--gmail-space-xs) 0 !important;
+}
+
+/* ── Folder Section Labels (e.g. "Labels") ── */
+md-sidenav .sg-section-label,
+md-sidenav .folder-group-label,
+.sg-folder-list .group-title {
+  font-size: var(--gmail-font-xs) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  color: var(--gmail-text-secondary) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  padding: var(--gmail-space-sm) var(--gmail-space-xl) var(--gmail-space-xs) !important;
+  margin-top: var(--gmail-space-sm) !important;
+}
+
+/* ── "More" expand link ── */
+md-sidenav .sg-more-link,
+.sg-folder-list [ng-click*="more"],
+.sg-folder-list [ng-click*="toggle"] {
+  color: var(--gmail-text-secondary) !important;
+  font-size: var(--gmail-font-sm) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  padding-left: var(--gmail-space-xl) !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--gmail-space-sm) !important;
+  cursor: pointer !important;
+}
+
+.sg-folder-list [ng-click*="more"]:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* ── Label color dots ── */
+md-sidenav .sg-label-color,
+.sg-folder-list .label-color-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: var(--gmail-radius-full) !important;
+  flex-shrink: 0 !important;
+  margin-right: var(--gmail-space-md) !important;
+}
+
+/* ── Sidebar collapsed state ── */
+md-sidenav.md-closed ~ * md-content,
+.sg-sidebar-collapsed md-sidenav {
+  width: var(--gmail-sidebar-collapsed) !important;
+  min-width: var(--gmail-sidebar-collapsed) !important;
+}
+
+/* Storage quota bar (bottom of sidebar) */
+.sg-quota-bar,
+md-sidenav .quota {
+  padding: var(--gmail-space-base) !important;
+  font-size: var(--gmail-font-xs) !important;
+  color: var(--gmail-text-tertiary) !important;
+}
+
+.sg-quota-bar md-progress-linear,
+.quota .md-bar {
+  background-color: var(--gmail-border-default) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+}
+
+.sg-quota-bar md-progress-linear .md-bar2,
+.quota .md-bar2 {
+  background-color: #1a73e8 !important;
+  border-radius: var(--gmail-radius-sm) !important;
+}

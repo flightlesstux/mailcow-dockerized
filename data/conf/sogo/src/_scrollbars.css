@@ -1,0 +1,44 @@
+/* === Custom Scrollbars === */
+
+/* Thin, Gmail-style scrollbars for WebKit browsers */
+
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(32, 33, 36, 0.28) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(32, 33, 36, 0.5) !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* Scrollbar-specific containers */
+md-sidenav::-webkit-scrollbar-thumb,
+.sg-folder-list::-webkit-scrollbar-thumb {
+  background-color: rgba(32, 33, 36, 0.2) !important;
+}
+
+.sg-mail-list::-webkit-scrollbar-thumb,
+md-virtual-repeat-container::-webkit-scrollbar-thumb {
+  background-color: rgba(32, 33, 36, 0.25) !important;
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(32, 33, 36, 0.28) transparent;
+}

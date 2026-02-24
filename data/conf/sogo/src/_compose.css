@@ -1,0 +1,271 @@
+/* === Compose Window (Phase 6) === */
+
+/* ── Compose Dialog: floating bottom-right ── */
+md-dialog.sg-compose,
+.sg-compose-dialog,
+[sg-compose-window],
+.compose-window {
+  position: fixed !important;
+  bottom: 0 !important;
+  right: var(--gmail-space-xxl) !important;
+  width: var(--gmail-compose-width) !important;
+  max-width: calc(100vw - 200px) !important;
+  min-height: var(--gmail-compose-height) !important;
+  height: auto !important;
+  border-radius: var(--gmail-radius-md) var(--gmail-radius-md) 0 0 !important;
+  box-shadow: var(--gmail-shadow-lg) !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ── Compose Header (dark bar) ── */
+md-dialog.sg-compose md-toolbar,
+.sg-compose-dialog .compose-header,
+.compose-window .compose-toolbar,
+[sg-compose-window] md-toolbar {
+  background-color: var(--gmail-text-primary) !important;
+  color: var(--gmail-text-on-primary) !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  font-size: var(--gmail-font-base) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  border-radius: var(--gmail-radius-md) var(--gmail-radius-md) 0 0 !important;
+  padding: 0 var(--gmail-space-sm) !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+}
+
+md-dialog.sg-compose md-toolbar .md-toolbar-tools,
+.sg-compose-dialog .compose-header .md-toolbar-tools {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  padding: 0 var(--gmail-space-sm) !important;
+  color: var(--gmail-text-on-primary) !important;
+}
+
+md-dialog.sg-compose md-toolbar md-icon,
+.sg-compose-dialog .compose-header md-icon {
+  color: rgba(255,255,255,0.7) !important;
+  font-size: 18px !important;
+}
+
+md-dialog.sg-compose md-toolbar md-icon:hover,
+.sg-compose-dialog .compose-header md-icon:hover {
+  color: var(--gmail-text-on-primary) !important;
+}
+
+/* Title in compose header */
+md-dialog.sg-compose md-toolbar h2,
+md-dialog.sg-compose md-toolbar .compose-title,
+.sg-compose-dialog .compose-header .title {
+  font-size: var(--gmail-font-sm) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  color: var(--gmail-text-on-primary) !important;
+}
+
+/* ── Compose Body Area ── */
+md-dialog.sg-compose md-dialog-content,
+.sg-compose-dialog .compose-body,
+.compose-window .compose-content {
+  padding: 0 !important;
+  flex: 1 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: var(--gmail-bg-primary) !important;
+}
+
+/* ── To / Cc / Bcc fields ── */
+.sg-compose-dialog .sg-recipient-field,
+.sg-compose-dialog .to-field,
+.sg-compose-dialog .cc-field,
+.sg-compose-dialog .bcc-field,
+md-dialog.sg-compose .sg-recipient,
+md-dialog.sg-compose md-chips {
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+  border-top: none !important;
+  padding: var(--gmail-space-xs) var(--gmail-space-base) !important;
+  min-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  background-color: var(--gmail-bg-primary) !important;
+  flex-shrink: 0 !important;
+}
+
+.sg-compose-dialog .sg-recipient-label,
+md-dialog.sg-compose .field-label {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+  min-width: 24px !important;
+  margin-right: var(--gmail-space-sm) !important;
+  flex-shrink: 0 !important;
+}
+
+md-dialog.sg-compose md-chips .md-chips {
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+md-dialog.sg-compose md-chips md-chip {
+  background-color: var(--gmail-bg-tertiary) !important;
+  color: var(--gmail-text-primary) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  font-size: var(--gmail-font-sm) !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  padding: 0 var(--gmail-space-sm) !important;
+}
+
+md-dialog.sg-compose md-chips md-chip md-icon {
+  font-size: 16px !important;
+  color: var(--gmail-text-secondary) !important;
+}
+
+/* ── Subject Field ── */
+.sg-compose-dialog .sg-subject-field,
+md-dialog.sg-compose input[ng-model*="subject"],
+md-dialog.sg-compose input[placeholder*="ubject"] {
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  outline: none !important;
+  padding: var(--gmail-space-sm) var(--gmail-space-base) !important;
+  font-size: var(--gmail-font-base) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  font-family: var(--gmail-font-primary) !important;
+  color: var(--gmail-text-primary) !important;
+  background-color: var(--gmail-bg-primary) !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
+  box-shadow: none !important;
+}
+
+.sg-compose-dialog .sg-subject-field::placeholder,
+md-dialog.sg-compose input[ng-model*="subject"]::placeholder {
+  color: var(--gmail-text-tertiary) !important;
+}
+
+/* ── Rich Text Editor / Textarea ── */
+.sg-compose-dialog .sg-editor,
+.sg-compose-dialog .ck-editor,
+.sg-compose-dialog .ck-content,
+md-dialog.sg-compose .ck-editor__editable,
+md-dialog.sg-compose textarea,
+md-dialog.sg-compose .text-editor {
+  padding: var(--gmail-space-base) !important;
+  font-family: var(--gmail-font-primary) !important;
+  font-size: var(--gmail-font-sm) !important;
+  line-height: var(--gmail-lh-normal) !important;
+  color: var(--gmail-text-primary) !important;
+  min-height: 200px !important;
+  flex: 1 !important;
+  border: none !important;
+  outline: none !important;
+  resize: none !important;
+  background-color: var(--gmail-bg-primary) !important;
+}
+
+/* CKEditor toolbar */
+.sg-compose-dialog .ck-toolbar,
+md-dialog.sg-compose .ck-toolbar {
+  border: none !important;
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+  background-color: var(--gmail-bg-primary) !important;
+}
+
+.sg-compose-dialog .ck-toolbar .ck-button,
+md-dialog.sg-compose .ck-toolbar .ck-button {
+  border-radius: var(--gmail-radius-sm) !important;
+  color: var(--gmail-icon-default) !important;
+}
+
+.sg-compose-dialog .ck-toolbar .ck-button:hover,
+.sg-compose-dialog .ck-toolbar .ck-button.ck-on {
+  background-color: var(--gmail-bg-hover) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+/* ── Bottom Actions Bar (Send + Formatting toolbar) ── */
+.sg-compose-dialog .compose-actions,
+.sg-compose-dialog .sg-format-toolbar,
+md-dialog.sg-compose md-dialog-actions,
+.compose-window .compose-footer {
+  border-top: 1px solid var(--gmail-border-default) !important;
+  padding: var(--gmail-space-sm) var(--gmail-space-base) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: var(--gmail-bg-primary) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Send button */
+.sg-compose-dialog .sg-send-button,
+md-dialog.sg-compose [ng-click*="send"],
+md-dialog.sg-compose .send-button {
+  background-color: #0b57d0 !important;
+  color: var(--gmail-text-on-primary) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  padding: 0 var(--gmail-space-xl) !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  font-size: var(--gmail-font-sm) !important;
+  text-transform: none !important;
+  letter-spacing: var(--gmail-ls-wide) !important;
+  box-shadow: none !important;
+}
+
+.sg-compose-dialog .sg-send-button:hover,
+md-dialog.sg-compose [ng-click*="send"]:hover {
+  background-color: #0a4bbf !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+}
+
+/* Formatting icons in toolbar */
+.sg-format-toolbar .md-button,
+.compose-actions .md-icon-button {
+  color: var(--gmail-icon-default) !important;
+  border-radius: var(--gmail-radius-full) !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  min-width: 36px !important;
+  line-height: 36px !important;
+}
+
+.sg-format-toolbar .md-button:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* Delete / discard button */
+.sg-compose-dialog .sg-discard-button,
+md-dialog.sg-compose [ng-click*="delete"],
+md-dialog.sg-compose [ng-click*="close"] {
+  color: var(--gmail-icon-default) !important;
+  border-radius: var(--gmail-radius-full) !important;
+}
+
+/* ── Minimized compose ── */
+md-dialog.sg-compose.minimized,
+.sg-compose-dialog.minimized {
+  height: 40px !important;
+  min-height: 40px !important;
+  overflow: hidden !important;
+}
+
+/* ── Maximized compose (full-screen) ── */
+md-dialog.sg-compose.maximized,
+.sg-compose-dialog.maximized {
+  width: calc(100vw - 400px) !important;
+  height: calc(100vh - 64px) !important;
+  top: var(--gmail-header-height) !important;
+  right: var(--gmail-space-xxl) !important;
+  border-radius: var(--gmail-radius-md) !important;
+}

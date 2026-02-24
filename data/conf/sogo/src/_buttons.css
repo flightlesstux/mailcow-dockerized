@@ -1,0 +1,103 @@
+/* === Buttons & Interactive Controls === */
+
+/* Base button reset */
+.md-button,
+md-button,
+button {
+  font-family: var(--gmail-font-primary) !important;
+  text-transform: none !important;
+  letter-spacing: var(--gmail-ls-wide) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+  transition: background-color var(--gmail-transition-fast),
+              box-shadow var(--gmail-transition-fast) !important;
+}
+
+/* Primary raised button (e.g. login button) */
+.md-button.md-primary.md-raised,
+.md-button.md-accent.md-raised {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+}
+
+.md-button.md-primary.md-raised:hover,
+.md-button.md-accent.md-raised:hover {
+  background-color: #1765cc !important;
+  box-shadow: var(--gmail-shadow-md) !important;
+}
+
+/* Flat/text buttons */
+.md-button.md-primary:not(.md-raised),
+.md-button[md-theme="default"]:not(.md-raised) {
+  color: var(--gmail-text-link) !important;
+}
+
+.md-button:not(.md-raised):not(.md-fab):hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* FAB / Compose button → pill shape */
+.md-button.md-fab,
+md-sidenav .md-fab,
+.sg-compose-fab,
+[ng-click*="compose"].md-fab {
+  background-color: var(--gmail-bg-compose-btn) !important;
+  color: var(--gmail-text-primary) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+  width: auto !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  padding: 0 24px 0 16px !important;
+  line-height: 56px !important;
+}
+
+.md-button.md-fab:hover,
+md-sidenav .md-fab:hover {
+  box-shadow: var(--gmail-shadow-md) !important;
+  background-color: #b4d7f5 !important;
+}
+
+/* Icon buttons in toolbars */
+md-toolbar .md-icon-button,
+md-toolbar .md-button.md-icon-button {
+  border-radius: var(--gmail-radius-full) !important;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  min-width: 40px !important;
+  line-height: 40px !important;
+}
+
+md-toolbar .md-icon-button:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+/* Send button in compose */
+.sg-compose-dialog .sg-send-button,
+md-dialog.sg-compose [ng-click*="send"],
+[ui-view*="compose"] [ng-click*="send"] {
+  background-color: #0b57d0 !important;
+  color: var(--gmail-text-on-primary) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  padding: 0 var(--gmail-space-xl) !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-weight: var(--gmail-weight-medium) !important;
+}
+
+.sg-compose-dialog .sg-send-button:hover,
+md-dialog.sg-compose [ng-click*="send"]:hover {
+  background-color: #0a4bbf !important;
+}
+
+/* Chip / tag buttons */
+md-chip,
+.md-chip {
+  background-color: var(--gmail-bg-tertiary) !important;
+  color: var(--gmail-text-primary) !important;
+  border-radius: var(--gmail-radius-pill) !important;
+  font-size: var(--gmail-font-sm) !important;
+}

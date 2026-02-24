@@ -1,0 +1,191 @@
+/* === Login Page (Phase 7) === */
+
+/* ── Login Page Background ── */
+.sg-login,
+#loginPage,
+.login-page,
+[id*="login"],
+[class*="login-page"],
+body.sogo-login {
+  background-color: var(--gmail-bg-secondary) !important;
+  font-family: var(--gmail-font-primary) !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ── Login Card ── */
+.sg-login md-card,
+.sg-login .login-card,
+#loginPage md-card,
+.login-form-container {
+  border-radius: var(--gmail-radius-lg) !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+  background-color: var(--gmail-bg-primary) !important;
+  max-width: 450px !important;
+  width: 100% !important;
+  padding: var(--gmail-space-xxl) var(--gmail-space-xl) !important;
+  border: 1px solid var(--gmail-border-default) !important;
+}
+
+/* ── Logo / Branding ── */
+.sg-login .sg-logo,
+.sg-login .login-logo,
+#loginPage .logo,
+.login-form-container .app-title {
+  text-align: center !important;
+  margin-bottom: var(--gmail-space-xl) !important;
+}
+
+.sg-login .sg-logo img,
+#loginPage .logo img {
+  max-width: 100px !important;
+  height: auto !important;
+}
+
+/* App name heading */
+.sg-login h1,
+.sg-login .app-name,
+#loginPage h1 {
+  font-family: var(--gmail-font-display) !important;
+  font-size: 24px !important;
+  font-weight: var(--gmail-weight-regular) !important;
+  color: var(--gmail-text-primary) !important;
+  text-align: center !important;
+  margin: 0 0 var(--gmail-space-xs) 0 !important;
+}
+
+.sg-login .login-subtitle,
+#loginPage .subtitle {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+  text-align: center !important;
+  margin-bottom: var(--gmail-space-xl) !important;
+}
+
+/* ── Input Fields ── */
+.sg-login input[type="text"],
+.sg-login input[type="password"],
+.sg-login input[type="email"],
+#loginPage input[type="text"],
+#loginPage input[type="password"] {
+  border: 1px solid var(--gmail-border-default) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+  padding: var(--gmail-space-md) var(--gmail-space-base) !important;
+  font-size: var(--gmail-font-base) !important;
+  font-family: var(--gmail-font-primary) !important;
+  color: var(--gmail-text-primary) !important;
+  background-color: var(--gmail-bg-primary) !important;
+  width: 100% !important;
+  outline: none !important;
+  transition: border-color var(--gmail-transition-fast),
+              box-shadow var(--gmail-transition-fast) !important;
+}
+
+.sg-login input:focus,
+#loginPage input:focus {
+  border-color: var(--gmail-border-focus) !important;
+  box-shadow: 0 0 0 1px var(--gmail-border-focus) !important;
+  outline: none !important;
+}
+
+.sg-login input::placeholder,
+#loginPage input::placeholder {
+  color: var(--gmail-text-tertiary) !important;
+}
+
+/* Angular Material form fields on login */
+.sg-login md-input-container,
+#loginPage md-input-container {
+  width: 100% !important;
+  margin-bottom: var(--gmail-space-base) !important;
+  padding: 0 !important;
+}
+
+.sg-login md-input-container label,
+#loginPage md-input-container label {
+  color: var(--gmail-text-secondary) !important;
+  font-size: var(--gmail-font-base) !important;
+}
+
+.sg-login md-input-container.md-input-focused label,
+#loginPage md-input-container.md-input-focused label {
+  color: var(--gmail-border-focus) !important;
+}
+
+.sg-login md-input-container .md-input,
+#loginPage md-input-container .md-input {
+  border-color: var(--gmail-border-default) !important;
+  color: var(--gmail-text-primary) !important;
+  font-size: var(--gmail-font-base) !important;
+}
+
+.sg-login md-input-container.md-input-focused .md-input,
+#loginPage md-input-container.md-input-focused .md-input {
+  border-color: var(--gmail-border-focus) !important;
+}
+
+/* ── Login Button ── */
+.sg-login .md-button.md-primary.md-raised,
+#loginPage .md-button.md-primary.md-raised,
+.sg-login button[type="submit"],
+#loginPage .login-button {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+  text-transform: none !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  font-size: var(--gmail-font-base) !important;
+  height: 40px !important;
+  width: 100% !important;
+  margin-top: var(--gmail-space-base) !important;
+  letter-spacing: var(--gmail-ls-wide) !important;
+  box-shadow: none !important;
+  transition: background-color var(--gmail-transition-fast),
+              box-shadow var(--gmail-transition-fast) !important;
+}
+
+.sg-login .md-button.md-primary.md-raised:hover,
+#loginPage .login-button:hover {
+  background-color: #1765cc !important;
+  box-shadow: var(--gmail-shadow-sm) !important;
+}
+
+/* ── Error messages ── */
+.sg-login .error-message,
+#loginPage .error,
+.sg-login md-input-container.md-input-invalid .md-input-message-animation {
+  color: var(--gmail-text-error) !important;
+  font-size: var(--gmail-font-sm) !important;
+  margin-top: var(--gmail-space-xxs) !important;
+}
+
+/* ── Footer / "Forgot password" link ── */
+.sg-login .login-footer,
+#loginPage .login-footer {
+  text-align: center !important;
+  margin-top: var(--gmail-space-base) !important;
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+}
+
+.sg-login .login-footer a,
+#loginPage .login-footer a {
+  color: var(--gmail-text-link) !important;
+  text-decoration: none !important;
+}
+
+.sg-login .login-footer a:hover {
+  text-decoration: underline !important;
+}
+
+/* ── Language selector on login ── */
+.sg-login .language-selector,
+#loginPage .language-select {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-secondary) !important;
+  text-align: center !important;
+  margin-top: var(--gmail-space-xl) !important;
+}

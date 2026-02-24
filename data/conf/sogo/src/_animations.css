@@ -1,0 +1,108 @@
+/* === Transitions & Motion === */
+
+/* Smooth transitions on interactive elements */
+.md-button,
+md-list-item,
+md-menu-item,
+md-sidenav md-list-item {
+  transition: background-color var(--gmail-transition-fast),
+              color var(--gmail-transition-fast),
+              box-shadow var(--gmail-transition-fast) !important;
+}
+
+/* Ripple effect color override */
+.md-ripple-container .md-ripple {
+  background-color: rgba(26, 115, 232, 0.12) !important;
+}
+
+/* Angular Material ink ripple on buttons */
+.md-button.md-primary .md-ripple-container .md-ripple {
+  background-color: rgba(26, 115, 232, 0.2) !important;
+}
+
+/* Sidenav open/close transition */
+md-sidenav {
+  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Search field expand */
+md-toolbar md-autocomplete,
+md-toolbar .sg-search-field {
+  transition: background-color 0.2s ease,
+              box-shadow 0.2s ease,
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Message row hover elevation */
+.sg-mail-list md-list-item {
+  transition: box-shadow 0.08s ease !important;
+}
+
+/* Star icon pop */
+.sg-mail-list .sg-star {
+  transition: color var(--gmail-transition-fast),
+              transform 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sg-mail-list .sg-star:hover {
+  transform: scale(1.2) !important;
+}
+
+.sg-mail-list .sg-star.active {
+  transform: scale(1.1) !important;
+}
+
+/* FAB scale on hover */
+.md-button.md-fab {
+  transition: box-shadow var(--gmail-transition-normal),
+              background-color var(--gmail-transition-normal),
+              transform 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.md-button.md-fab:hover {
+  transform: scale(1.02) !important;
+}
+
+/* Dialog enter/leave */
+md-dialog {
+  animation: gmail-dialog-in 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@keyframes gmail-dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Toast slide-in */
+md-toast {
+  animation: gmail-toast-in 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@keyframes gmail-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

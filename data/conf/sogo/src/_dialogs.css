@@ -1,0 +1,191 @@
+/* === Modals / Dialogs / Menus === */
+
+/* ── Generic Dialog ── */
+md-dialog {
+  border-radius: var(--gmail-radius-md) !important;
+  box-shadow: var(--gmail-shadow-lg) !important;
+  background-color: var(--gmail-bg-primary) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+md-dialog md-toolbar {
+  background-color: var(--gmail-bg-primary) !important;
+  color: var(--gmail-text-primary) !important;
+  border-bottom: 1px solid var(--gmail-border-default) !important;
+  box-shadow: none !important;
+}
+
+md-dialog md-toolbar h2,
+md-dialog md-toolbar .md-toolbar-tools h2 {
+  font-size: var(--gmail-font-lg) !important;
+  font-weight: var(--gmail-weight-regular) !important;
+  color: var(--gmail-text-primary) !important;
+}
+
+md-dialog md-dialog-content {
+  padding: var(--gmail-space-xl) !important;
+  color: var(--gmail-text-primary) !important;
+  font-size: var(--gmail-font-base) !important;
+}
+
+md-dialog md-dialog-actions {
+  padding: var(--gmail-space-sm) var(--gmail-space-base) !important;
+  border-top: 1px solid var(--gmail-border-default) !important;
+  background-color: var(--gmail-bg-primary) !important;
+}
+
+/* Dialog action buttons */
+md-dialog md-dialog-actions .md-button {
+  border-radius: var(--gmail-radius-pill) !important;
+  font-weight: var(--gmail-weight-medium) !important;
+  text-transform: none !important;
+  padding: 0 var(--gmail-space-xl) !important;
+  height: 36px !important;
+  line-height: 36px !important;
+}
+
+md-dialog md-dialog-actions .md-button.md-primary {
+  color: var(--gmail-text-link) !important;
+}
+
+md-dialog md-dialog-actions .md-button.md-primary.md-raised {
+  background-color: #1a73e8 !important;
+  color: var(--gmail-text-on-primary) !important;
+}
+
+/* Backdrop / overlay */
+md-backdrop {
+  background-color: rgba(32, 33, 36, 0.4) !important;
+}
+
+/* ── Dropdown Menus ── */
+md-menu-content,
+.md-open-menu-container {
+  background-color: var(--gmail-bg-primary) !important;
+  border-radius: var(--gmail-radius-md) !important;
+  box-shadow: var(--gmail-shadow-md) !important;
+  padding: var(--gmail-space-xs) 0 !important;
+  min-width: 200px !important;
+}
+
+md-menu-item {
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 var(--gmail-space-base) !important;
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-primary) !important;
+  cursor: pointer !important;
+  transition: background-color var(--gmail-transition-fast) !important;
+}
+
+md-menu-item:hover,
+md-menu-item:focus {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+md-menu-item md-icon {
+  color: var(--gmail-icon-default) !important;
+  font-size: 20px !important;
+  margin-right: var(--gmail-space-base) !important;
+}
+
+md-menu-divider {
+  border-top: 1px solid var(--gmail-border-default) !important;
+  margin: var(--gmail-space-xs) 0 !important;
+}
+
+/* ── Context Menu (right-click) ── */
+.sg-context-menu,
+.context-menu {
+  background-color: var(--gmail-bg-primary) !important;
+  border-radius: var(--gmail-radius-md) !important;
+  box-shadow: var(--gmail-shadow-md) !important;
+  padding: var(--gmail-space-xs) 0 !important;
+  z-index: 9999 !important;
+}
+
+.sg-context-menu .menu-item,
+.context-menu li {
+  padding: var(--gmail-space-sm) var(--gmail-space-base) !important;
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-primary) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--gmail-space-base) !important;
+}
+
+.sg-context-menu .menu-item:hover,
+.context-menu li:hover {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+.sg-context-menu .menu-item md-icon {
+  color: var(--gmail-icon-default) !important;
+  font-size: 18px !important;
+}
+
+/* ── Snackbar / Toast notifications ── */
+md-toast,
+.md-toast-content {
+  background-color: var(--gmail-text-primary) !important;
+  color: var(--gmail-text-on-primary) !important;
+  border-radius: var(--gmail-radius-md) !important;
+  box-shadow: var(--gmail-shadow-md) !important;
+  font-size: var(--gmail-font-sm) !important;
+  padding: var(--gmail-space-sm) var(--gmail-space-base) !important;
+}
+
+md-toast .md-button {
+  color: #8ab4f8 !important;
+  font-weight: var(--gmail-weight-medium) !important;
+}
+
+/* ── Alert / Confirm dialogs ── */
+.sg-alert md-dialog,
+.sg-confirm md-dialog {
+  max-width: 400px !important;
+}
+
+/* ── Select / Dropdown inputs ── */
+md-select {
+  color: var(--gmail-text-primary) !important;
+}
+
+md-select-menu {
+  background-color: var(--gmail-bg-primary) !important;
+  border-radius: var(--gmail-radius-md) !important;
+  box-shadow: var(--gmail-shadow-md) !important;
+}
+
+md-select-menu md-option {
+  font-size: var(--gmail-font-sm) !important;
+  color: var(--gmail-text-primary) !important;
+  height: 40px !important;
+  padding: 0 var(--gmail-space-base) !important;
+}
+
+md-select-menu md-option:hover,
+md-select-menu md-option.md-focused {
+  background-color: var(--gmail-bg-hover) !important;
+}
+
+md-select-menu md-option[selected] {
+  color: var(--gmail-text-link) !important;
+}
+
+/* ── Bottom Sheet ── */
+md-bottom-sheet {
+  background-color: var(--gmail-bg-primary) !important;
+  border-radius: var(--gmail-radius-lg) var(--gmail-radius-lg) 0 0 !important;
+  box-shadow: var(--gmail-shadow-lg) !important;
+}
+
+/* ── Tooltip ── */
+.md-tooltip {
+  background-color: var(--gmail-text-primary) !important;
+  color: var(--gmail-text-on-primary) !important;
+  font-size: var(--gmail-font-xs) !important;
+  border-radius: var(--gmail-radius-sm) !important;
+  padding: var(--gmail-space-xs) var(--gmail-space-sm) !important;
+}
